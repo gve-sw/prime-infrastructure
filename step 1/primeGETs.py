@@ -1,5 +1,10 @@
 #Prime Infrastructure
+
 #All five GETs from Device Details APIs
+
+#The Device Details category provides basic information about the managed devices:
+#  Device summary and inventory information about devices.
+#  Events and alarms in the system.
 
 import requests
 
