@@ -1,3 +1,6 @@
+#Prime Infrastructure
+#All five GETs from Device Details APIs
+
 import requests
 
 apiUrl = "https://198.18.134.53/webacs/api/v1/"
