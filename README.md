@@ -26,7 +26,11 @@ You will find the corresponding folders for each step.
 
 
 
+<<<<<<< HEAD
 ### Products in this project
+=======
+## Products in this project
+>>>>>>> origin/master
 * [Cisco Prime Infrastructure](http://www.cisco.com/c/en/us/products/cloud-systems-management/prime-infrastructure/index.html)
 * [Cisco Meraki](https://meraki.cisco.com/)
 
