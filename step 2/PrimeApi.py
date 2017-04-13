@@ -1,37 +1,33 @@
 import requests
-import requests.packages.urllib3
-from requests.packages.urllib3.exceptions import InsecureRequestWarning
-from requests.auth import HTTPBasicAuth # for Basic Auth
-requests.packages.urllib3.disable_warnings(InsecureRequestWarning) # Disable insecure https warnings
+import base64
 
 
-class PrimeApi:
+class PrimeApi(object):
 	
-	def __init__(self, server, key):
+	def __init__(self, server,key):
 		self.server = server
 		self.headers = PrimeApi.set_headers(key)
 
 	def set_headers(key):
-		accessToken_hdr = 'Bearer ' + key
+		accessToken_hdr = 'Basic ' + key
 		prime_header = {'Authorization': accessToken_hdr, 'Content-Type': 'application/json; charset=utf-8'}
 		return (prime_header)
 
-	def getWLCDetails():
+	def getWLCDetails(self):
 	    url = self.server+"/data/WlanControllerDetails.json"
-	    response = requests.request("GET", url, headers=self.headers)
+	    response = requests.request("GET", url, headers=self.headers , verify=False)
+	    print('HERE')
 	    return (response.text)
 
-	def getJobSummary():
+	def getJobSummary(self):
 		url = "data/JobSummary.json"
-		response = requests.request("GET", url, headers=self.headers)
+		response = requests.request("GET", url, headers=self.headers , verify=False)
 		return(response.text)
 
-	def getJobSummary():
+	def getJobSummary(self):
 		url = "op/info/uptime.json"
-		response = requests.request("GET", url, headers=self.headers)
+		response = requests.request("GET", url, headers=self.headers , verify=False)
 		return(response.text)
-		
-
 
 
 
